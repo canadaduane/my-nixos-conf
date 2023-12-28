@@ -7,15 +7,36 @@
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    htop
-    git
-    lazygit
-    bitwarden
-    bitwarden-cli
-    vscodium
+    # Graphical apps
+    amberol # music player
+    bitwarden # passwords
+    celluloid # video player
+    fractal # matrix chat
+    lazpaint # image editor
+    shotcut # video editing
+    vscodium # code editor
+
+    # CLI tools
+    bitwarden-cli # access secrets
+    broot # summarize deep dirs
+    eza # better ls
+    fzf # fuzzy search
+    git # version control
+    htop # system resources
+    lazygit # ncurses git
   ];
 
   programs.home-manager.enable = true;
+
+  services.flameshot = {
+    enable = true;
+  };
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
+  };
 
   programs.zsh = {
     enable = true;
