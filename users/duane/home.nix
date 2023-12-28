@@ -22,7 +22,7 @@
 
     shellAliases = {
       lg = "lazygit";
-      config-os = "sudo nvim ~/config/system/configuration.nix";
+      config-os = "nvim ~/config/system/configuration.nix";
       update-os = "sudo nix-channel --update";
       apply-os = "sudo nixos-rebuild switch -I nixos-config=$HOME/config/system/configuration.nix";
       config = "nvim ~/config/users/duane/home.nix";
