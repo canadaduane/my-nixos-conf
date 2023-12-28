@@ -72,6 +72,7 @@
     };
     "org/gnome/shell/keybindings" = {
       toggle-overview = ["<Super>slash"];
+      maximize = ["<Super>m"];
     };
   };
 }
