@@ -28,16 +28,6 @@
 
   programs.home-manager.enable = true;
 
-  services.flameshot = {
-    enable = true;
-  };
-  systemd.user.targets.tray = {
-    Unit = {
-      Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
-    };
-  };
-
   programs.zsh = {
     enable = true;
 
