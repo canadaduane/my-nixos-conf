@@ -21,7 +21,7 @@
     enable = true;
 
     shellAliases = {
-      ll = "echo works";
+      lg = "lazygit";
       config-os = "sudo nvim ~/config/system/configuration.nix";
       update-os = "sudo nixos-rebuild switch -I nixos-config=$HOME/config/system/configuration.nix";
       config = "nvim ~/config/users/duane/home.nix";
