@@ -23,9 +23,11 @@
     shellAliases = {
       lg = "lazygit";
       config-os = "sudo nvim ~/config/system/configuration.nix";
-      update-os = "sudo nixos-rebuild switch -I nixos-config=$HOME/config/system/configuration.nix";
+      update-os = "sudo nix-channel --update";
+      apply-os = "sudo nixos-rebuild switch -I nixos-config=$HOME/config/system/configuration.nix";
       config = "nvim ~/config/users/duane/home.nix";
-      update = "home-manager switch -f $HOME/config/users/duane/home.nix";
+      update = "nix-channel --update";
+      apply = "home-manager switch -f $HOME/config/users/duane/home.nix";
     };
 
     plugins = [
