@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     htop
     git
+    lazygit
   ];
 
   programs.home-manager.enable = true;
@@ -17,11 +18,11 @@
     enable = true;
 
     shellAliases = {
-      ll = "ls -l";
-      config-os = "sudo nvim /etc/nixos/configuration.nix";
-      update-os = "sudo nixos-rebuild switch";
-      config = "nvim ~/.config/home-manager/home.nix";
-      update = "home-manager switch";
+      ll = "echo works";
+      config-os = "sudo nvim ~/config/system/configuration.nix";
+      update-os = "sudo nixos-rebuild switch -I nixos-config=$HOME/config/system/configuration.nix";
+      config = "nvim ~/config/users/duane/home.nix";
+      update = "home-manager switch -f $HOME/config/users/duane/home.nix";
     };
 
     plugins = [
