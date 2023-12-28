@@ -61,6 +61,13 @@
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
     };
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+      speed = -0.55;
+    };
+    "org/gnome/desktop/sound" = {
+      allow-volume-above-100-percent = true;
+    };
     "org/gnome/shell/keybindings" = {
       toggle-overview = ["<Super>slash"];
     };
