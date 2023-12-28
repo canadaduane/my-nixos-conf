@@ -59,6 +59,20 @@
     xkbVariant = "";
   };
 
+  # Enable flatpak with flathub configured
+  services.flatpak.enable = true;
+  system.activationScripts = {
+    flathub = ''
+      /run/current-system/sw/bin/flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+  # environment.etc = {
+  #   "flatpak/remotes.d/flathub.flatpakrepo".source = pkgs.fetchurl {
+  #     url = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+  #     hash = "sha256-M3HdJQ5h2eFjNjAHP+/aFTzUQm9y9K+gwzc64uj+oDo=";
+  #   };
+  # };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
