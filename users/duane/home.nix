@@ -10,6 +10,9 @@
     htop
     git
     lazygit
+    bitwarden
+    bitwarden-cli
+    vscodium
   ];
 
   programs.home-manager.enable = true;
