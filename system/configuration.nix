@@ -15,9 +15,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # allowed-users = [ "@wheel" ];
-  # trusted-users = [ "root" "@wheel" ];
-
   # Enable networking
   networking = {
     hostName = "nixos";
