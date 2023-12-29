@@ -106,6 +106,7 @@
     wl-clipboard
   ] ++ (with pkgs.gnomeExtensions; [
     burn-my-windows
+    custom-osd
     fullscreen-avoider
     fullscreen-hot-corner
     one-thing

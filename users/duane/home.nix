@@ -92,8 +92,13 @@ in
 
 
   dconf.settings = {
+    "org/gnome/mutter" = {
+      center-new-windows = true;
+      workspaces-only-on-primary = true;
+    };
     "org/gnome/shell".enabled-extensions = [
       "burn-my-windows@schneegans.github.com"
+      "custom-osd@neuromorph"
       "fullscreen-avoider@noobsai.github.com"
       "fullscreen-hot-corner@sorrow.about.alice.pm.me"
       "one-thing@github.com"
