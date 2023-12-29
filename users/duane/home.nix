@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 
-
 let
   burnMyWindowsProfile = pkgs.writeText "nix-profile.conf" ''
     [burn-my-windows-profile]
@@ -54,6 +53,7 @@ in
     bitwarden # passwords
     celluloid # video player
     fractal # matrix chat
+    krita # graphic art
     lazpaint # image editor
     shotcut # video editing
 
@@ -66,6 +66,8 @@ in
     htop # system resources
     lazygit # ncurses git
   ];
+
+  xdg.configFile.kritarc.source = ./kritarc;
 
   programs.home-manager.enable = true;
 
