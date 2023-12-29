@@ -117,10 +117,27 @@
 
   fonts = {
     enableDefaultPackages = true;
+    fontDir.enable = true;
     packages = with pkgs; [
+      alegreya
+      alegreya-sans
       dejavu_fonts
       fira-code-nerdfont
+      font-awesome
+      hack-font
+      inconsolata
+      inter
+      liberation_ttf
+      merriweather
+      merriweather-sans
+      mplus-outline-fonts.githubRelease
+      noto-fonts
       noto-fonts-emoji
+      # playfair
+      roboto
+      roboto-slab
+      rubik
+      open-sans
     ];
   };
 

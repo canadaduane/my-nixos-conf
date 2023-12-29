@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+
 
 let
   burnMyWindowsProfile = pkgs.writeText "nix-profile.conf" ''
@@ -90,6 +91,13 @@ in
     "L+ %h/.config/burn-my-windows/profiles/nix-profile.conf 0755 - - - ${burnMyWindowsProfile}"
   ];
 
+  # Give flathub access to custom fonts
+  home.activation = {
+    flathub = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.local/share/fonts
+      /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.icons
+    '';
+  };
 
   dconf.settings = {
     "org/gnome/mutter" = {
