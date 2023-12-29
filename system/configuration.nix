@@ -73,6 +73,16 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Install Steam
+  programs.steam.enable = true;
+  environment.sessionVariables = {
+    STEAM_FORCE_DESKTOPUI_SCALING = "2";
+  };
+
+  services.dbus.enable = true;
+
+  xdg.portal.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
