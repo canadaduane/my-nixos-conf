@@ -1,27 +1,24 @@
 { config, pkgs, ... }:
 
-  let
-    lock-false = {
-      Value = false;
-      Status = "locked";
-    };
-    lock-true = {
-      Value = true;
-      Status = "locked";
-    };
-    lock-empty-string = {
-      Value = "";
-      Status = "locked";
-    };
-  in
+let
+  burnMyWindowsProfile = pkgs.writeText "nix-profile.conf" ''
+    [burn-my-windows-profile]
+
+    profile-high-priority=true
+    profile-window-type=0
+    profile-animation-type=0
+    fire-enable-effect=false
+    glide-enable-effect=true
+    glide-animation-time=250
+    glide-squish=0.0
+    glide-tilt=0.0
+    glide-shift=0.0
+    glide-scale=0.85
+  '';
+in
 
 {
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
+  imports = [ ./firefox.nix ];
 
   home.username = "duane";
   home.homeDirectory = "/home/duane";
@@ -49,114 +46,6 @@
   ];
 
   programs.home-manager.enable = true;
-
-  programs.firefox = {
-    enable = true;
-
-    policies = {
-      DisableTelemetry = true;
-      DisableFirefoxStudies = true;
-      EnableTrackingProtection = {
-        Value = true;
-	Locked = true;
-	Cryptomining = true;
-	Fingerprinting = true;
-      };
-      OverrideFirstRunPage = "";
-      OverridePostUpdatePage = "";
-      DontCheckDefaultBrowser = true;
-      DisablePocket = true;
-      SearchBar = "unified";
-      SearchEngines = {
-        Default = "DuckDuckGo";
-        PreventInstalls = false;
-      };
-
-      Preferences = {
-        "extensions.pocket.enabled" = lock-false;
-        "browser.newtabpage.pinned" = lock-empty-string;
-        "browser.search.suggest.enabled" = lock-false;
-        "browser.search.suggest.enabled.private" = lock-false;
-        "browser.urlbar.suggest.searches" = lock-false;
-        "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
-	"browser.topsites.contile.enabled" = lock-false;
-        "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
-        "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
-        "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-        "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-        "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-	"browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned" = lock-empty-string;
-	"browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines" = lock-empty-string;
-      };
-    };
-
-    profiles = {
-      default = {
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-	  bitwarden
-	  # bypass-paywalls-clean
-	  copy-selection-as-markdown
-	  darkreader
-	  # enhancer-for-youtube
-	  gnome-shell-integration
-	  # metamask
-	  # modheader
-	  privacy-badger
-	  # sourcegraph
-	  tabliss
-	  # tampermonkey
-	  ublock-origin
-	  # wikiwand-wikipedia-modernized
-	];
-	settings = {
-	  "browser.aboutConfig.showWarning" = false;
-          "browser.compactmode.show" = true;
-          "browser.startup.homepage" = "";
-
-	  "browser.newtabpage.activity-stream.default.sites" = "";
-	  "browser.newtabpage.activity-stream.feeds.topsites" = false;
-	  "browser.newtabpage.activity-stream.feeds.system.topstories" = false;
-          "browser.newtabpage.activity-stream.feeds.snippets" = false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-	  "browser.newtabpage.activity-stream.showSponsored" = false;
-	  "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-	  "browser.newtabpage.activity-stream.system.showSponsored" = false;
-	  "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
-	  "browser.newtabpage.activity-stream.discoverystream.sendToPocket.enabled" = false;
-	  "browser.newtabpage.activity-stream.telemetry" = false;
-          "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;
-          "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
-
-          "privacy.webrtc.legacyGlobalIndicator" = false;
-          "app.shield.optoutstudies.enabled" = false;
-          "app.update.auto" = false;
-          "browser.contentblocking.category" = "strict";
-          "browser.discovery.enabled" = false;
-          "browser.laterrun.enabled" = false;
-          "browser.protections_panel.infoMessage.seen" = true;
-          "browser.quitShortcut.disabled" = true;
-          "browser.shell.checkDefaultBrowser" = false;
-          "browser.ssb.enabled" = true;
-          "browser.urlbar.suggest.openpage" = false;
-          "datareporting.policy.dataSubmissionEnable" = false;
-          "datareporting.policy.dataSubmissionPolicyAcceptedVersion" = 2;
-          "extensions.htmlaboutaddons.recommendations.enabled" = false;
-          "extensions.pocket.enabled" = false;
-          "identity.fxaccounts.enabled" = false;
-          "privacy.trackingprotection.enabled" = true;
-          "privacy.trackingprotection.socialtracking.enabled" = true;
-
-	  "mousewheel.default.delta_multiplier_x" = 20;
-	  "mousewheel.default.delta_multiplier_y" = 20;
-	  "mousewheel.default.delta_multiplier_z" = 20;
-	};
-      };
-    };
-  };
 
   programs.zsh = {
     enable = true;
@@ -196,7 +85,23 @@
     };
   };
 
+  systemd.user.tmpfiles.rules = [
+    # Set up `Burn My Windows` config, as it uses a separate file in $HOME/.config.
+    "L+ %h/.config/burn-my-windows/profiles/nix-profile.conf 0755 - - - ${burnMyWindowsProfile}"
+  ];
+
+
   dconf.settings = {
+    "org/gnome/shell".enabled-extensions = [
+      "burn-my-windows@schneegans.github.com"
+      "fullscreen-avoider@noobsai.github.com"
+      "fullscreen-hot-corner@sorrow.about.alice.pm.me"
+      "one-thing@github.com"
+      "pano@elhan.io"
+    ];
+    "org/gnome/shell/extensions/burn-my-windows" = {
+      active-profile = "${burnMyWindowsProfile}";
+    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       scaling-factor = 2;

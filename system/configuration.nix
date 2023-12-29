@@ -103,7 +103,14 @@
 
   environment.systemPackages = with pkgs; [
     wget
-  ];
+    wl-clipboard
+  ] ++ (with pkgs.gnomeExtensions; [
+    burn-my-windows
+    fullscreen-avoider
+    fullscreen-hot-corner
+    one-thing
+    pano
+  ]);
 
   programs.zsh.enable = true;
 
