@@ -16,6 +16,28 @@ let
     glide-shift=0.0
     glide-scale=0.85
   '';
+
+  system = builtins.currentSystem;
+
+  extensions =
+    (import (builtins.fetchGit {
+      url = "https://github.com/nix-community/nix-vscode-extensions";
+      ref = "refs/heads/master";
+      rev = "12ddf5e3ed4edf6ec5628fdb8dad8742cd162edf";
+    })).extensions.${system};
+
+  extensionsList = with extensions; [
+    open-vsx.auiworks.amvim
+    open-vsx.dbaeumer.vscode-eslint
+    open-vsx.esbenp.prettier-vscode
+    open-vsx.prisma.prisma
+    open-vsx.reduckted.vscode-gitweblinks
+    open-vsx.rust-lang.rust-analyzer
+    open-vsx.stkb.rewrap
+    vscode-marketplace.bierner.lit-html
+    vscode-marketplace.jnoortheen.nix-ide
+    vscode-marketplace.simonsiefke.svg-preview
+  ];
 in
 
 {
@@ -34,7 +56,6 @@ in
     fractal # matrix chat
     lazpaint # image editor
     shotcut # video editing
-    vscodium # code editor
 
     # CLI tools
     bitwarden-cli # access secrets
@@ -47,6 +68,12 @@ in
   ];
 
   programs.home-manager.enable = true;
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = extensionsList;
+  };
 
   programs.zsh = {
     enable = true;
