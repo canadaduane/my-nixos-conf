@@ -11,6 +11,15 @@
     '';
   };
   
+  # Give flathub access to custom fonts
+  # home.activation = {
+  #   flathub = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #     /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.local/share/fonts
+  #     /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.icons
+  #   '';
+  # };
+
+  
   # TODO: Why doesn't this work?
   # environment.etc = {
   #   "flatpak/remotes.d/flathub.flatpakrepo".source = pkgs.fetchurl {

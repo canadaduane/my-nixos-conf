@@ -7,6 +7,7 @@ let
   GTK4 = "${GTK}/gtk4";
 
   fileChooser = {
+    clock-format = "12h";
     date-format = "regular";
     location-mode = "path-bar";
     show-hidden = true;
@@ -21,11 +22,16 @@ in
 
 {
   dconf.settings = {
+    "org/gnome/mutter" = {
+      center-new-windows = true;
+      workspaces-only-on-primary = true;
+    };
+
     "org/gnome/desktop/interface" = {
       clock-show-date = true;
-      clock-show-weekday = true;
+      clock-format = "12h";
       color-scheme = "prefer-dark";
-      text-scaling-factor = 1.2;
+      scaling-factor = 2;
       enable-hot-corners = false;
     };
 
@@ -67,6 +73,24 @@ in
         (mkDictionaryEntry [ "smoothing" (mkVariant 1) ])
         (mkDictionaryEntry [ "enabled" (mkVariant true) ])
       ];
+    };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      tap-to-click = true;
+    };
+
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+      speed = -0.55;
+    };
+
+    "org/gnome/desktop/sound" = {
+      allow-volume-above-100-percent = true;
+    };
+
+    "org/gnome/shell/keybindings" = {
+      toggle-overview = [ "<Super>slash" ];
+      maximize = [ "<Super>m" ];
     };
 
     "${GTK}/settings/file-chooser" = fileChooser;

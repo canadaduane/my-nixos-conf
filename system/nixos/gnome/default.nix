@@ -8,7 +8,6 @@
     ];
   }];
 
-
   services.xserver = {
     # Enable the graphical windowing system
     enable = true;
