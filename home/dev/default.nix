@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./neovim.nix
     ./node.nix
     ./prisma.nix
     ./python.nix
