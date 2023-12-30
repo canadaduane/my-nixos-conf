@@ -29,8 +29,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  users.defaultUserShell = pkgs.zsh;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
