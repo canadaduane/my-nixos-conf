@@ -7,6 +7,7 @@
     ./fonts.nix
     ./nix.nix
     ./pkgs.nix
+    ./shells.nix
   ];
 
   # Localization

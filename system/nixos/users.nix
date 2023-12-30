@@ -5,6 +5,7 @@
     isNormalUser = true;
     description = user;
     extraGroups = [ "wheel" ];
+    useDefaultShell = true;
   };
 
   security.sudo.extraConfig = ''
