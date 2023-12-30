@@ -2,7 +2,7 @@
 
 {
   d.shell.aliases = {
-    gi = "lazygit";
+    lg = "lazygit";
   };
 
   # https://github.com/jesseduffield/lazygit
