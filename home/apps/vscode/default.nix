@@ -17,18 +17,13 @@ in
       type = types.bool;
       default = true;
     };
-
-    withCopilot = mkOption {
-      type = types.bool;
-      default = true;
-    };
   };
 
   config = mkIf cfg.enable {
     programs.vscode = {
       enable = true;
 
-      package = pkgs.vscodium;
+      # package = pkgs.vscodium;
 
       mutableExtensionsDir = true;
       enableUpdateCheck = false;
