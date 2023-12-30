@@ -2,11 +2,12 @@
 
 {
   imports = [
-    ./gnome
     ./boot.nix
     ./docker.nix
+    ./gnome
     ./hardware.nix
     ./network.nix
+    ./keyd
     ./pkgs.nix
     ./sound.nix
     ./systemd.nix
