@@ -65,6 +65,7 @@ in
     git # version control
     htop # system resources
     lazygit # ncurses git
+    nixpkgs-fmt # format .nix code
   ];
 
   xdg.configFile.kritarc.source = ./kritarc;
@@ -107,7 +108,7 @@ in
   programs.git = {
     enable = true;
 
-    userName  = "Duane Johnson";
+    userName = "Duane Johnson";
     userEmail = "duane.johnson@gmail.com";
 
     extraConfig = {
@@ -165,8 +166,8 @@ in
       allow-volume-above-100-percent = true;
     };
     "org/gnome/shell/keybindings" = {
-      toggle-overview = ["<Super>slash"];
-      maximize = ["<Super>m"];
+      toggle-overview = [ "<Super>slash" ];
+      maximize = [ "<Super>m" ];
     };
   };
 }

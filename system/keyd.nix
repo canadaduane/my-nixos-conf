@@ -1,9 +1,13 @@
 { pkgs
 , lib
 , ...
-}: let
+}:
+
+let
   keydConfig = builtins.readFile ./keyd.conf;
-in {
+in
+
+{
   environment.systemPackages = [
     pkgs.keyd
   ];
