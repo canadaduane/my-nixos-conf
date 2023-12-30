@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+src="$HOME/.dotfiles"
+host="$src#${D_HOSTNAME-}"
+
+nix() {
+	command nix --experimental-features 'nix-command flakes' $@
+}
+
+flake() {
+	if
+		command -v nixos-rebuild >/dev/null 2>&1
+	then
+		sudo nixos-rebuild $@ --flake $host
+	else
+		nix run nix-darwin -- $@ --flake $host
+	fi
+}
+
+case ${1-} in
+build)
+	flake build
+	;;
+test)
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		flake switch
+	else
+		flake test --fast
+	fi
+	;;
+prune)
+	nix-collect-garbage
+	;;
+pull)
+	nix flake update $src
+	;;
+*)
+	flake switch
+	;;
+esac

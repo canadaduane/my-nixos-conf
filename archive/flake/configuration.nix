@@ -12,9 +12,16 @@
       ./keyd.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 10;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
 
   # Enable networking
   networking = {
@@ -161,5 +168,10 @@
 
 
   system.stateVersion = "23.11";
+
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = "experimental-features = nix-command flakes";
+  };
 
 }

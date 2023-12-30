@@ -48,24 +48,6 @@ in
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    # Graphical apps
-    amberol # music player
-    bitwarden # passwords
-    celluloid # video player
-    fractal # matrix chat
-    krita # graphic art
-    lazpaint # image editor
-    shotcut # video editing
-
-    # CLI tools
-    bitwarden-cli # access secrets
-    broot # summarize deep dirs
-    eza # better ls
-    fzf # fuzzy search
-    git # version control
-    htop # system resources
-    lazygit # ncurses git
-    nixpkgs-fmt # format .nix code
   ];
 
   xdg.configFile.kritarc.source = ./kritarc;
