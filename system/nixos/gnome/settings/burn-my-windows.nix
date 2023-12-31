@@ -21,4 +21,10 @@ in
       active-profile = "${burnMyWindowsProfile}";
     };
   };
+
+  systemd.user.tmpfiles.rules = [
+    # Set up `Burn My Windows` config, as it uses a separate file in $HOME/.config.
+    "L+ %h/.config/burn-my-windows/profiles/nix-profile.conf 0755 - - - ${burnMyWindowsProfile}"
+  ];
+
 }
