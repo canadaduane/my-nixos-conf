@@ -32,7 +32,7 @@ in
       clock-format = "12h";
       color-scheme = "prefer-dark";
       scaling-factor = 2;
-      enable-hot-corners = false;
+      enable-hot-corners = true;
     };
 
     "org/gnome/desktop/session" = {

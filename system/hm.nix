@@ -27,6 +27,18 @@ in
           ../home
         ];
       };
+
+      # BUG: scaling-factor can't be set on first boot due to missing gdm profile
+      #      see https://github.com/nix-community/home-manager/issues/4352
+      users.gdm = { lib, ... }: {
+        home.stateVersion = version;
+        dconf.settings = {
+          "org/gnome/desktop/interface" = with lib.hm.gvariant; {
+            scaling-factor = mkUint32 2;
+          };
+        };
+      };
+
     };
   };
 }
