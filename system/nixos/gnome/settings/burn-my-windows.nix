@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 let
   burnMyWindowsProfile = pkgs.writeText "nix-profile.conf" ''
     [burn-my-windows-profile]

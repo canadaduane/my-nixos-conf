@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 {
   dconf.settings = {
     "org/gnome/shell/extensions/custom-osd" = with lib.hm.gvariant; {
