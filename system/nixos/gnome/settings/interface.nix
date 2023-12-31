@@ -46,6 +46,10 @@ in
       resize-with-right-button = false;
     };
 
+    "org/gnome/settings-daemon/plugins/power" = {
+      ambient-enabled = false;
+    };
+
     "org/gnome/shell/extensions/rounded-window-corners" = {
       skip-libadwaita-app = true;
       skip-libhandy-app = false;
