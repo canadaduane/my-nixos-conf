@@ -18,8 +18,6 @@
     hm.url = "github:nix-community/home-manager/release-23.11";
     hm.inputs.nixpkgs.follows = "stable";
 
-    nur.url = "github:nix-community/nur/master";
-
     nix-index.url = "github:Mic92/nix-index-database";
     nix-index.inputs.nixpkgs.follows = "stable";
 
@@ -36,7 +34,6 @@
     , darwin
     , hm
     , hardware
-    , nur
     , utils
     , vscode-extensions
     , fenix
@@ -113,7 +110,6 @@
       sharedOverlays = [
         vscode-extensions.overlays.default
         fenix.overlays.default
-        nur.overlay
       ];
 
       hostDefaults = {
