@@ -20,7 +20,7 @@ in
     ];
 
     d.shell.aliases = {
-      vim = "neovim";
+      vim = "nvim";
     };
   };
 }
