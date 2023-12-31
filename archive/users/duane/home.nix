@@ -103,95 +103,39 @@ in
     "L+ %h/.config/burn-my-windows/profiles/nix-profile.conf 0755 - - - ${burnMyWindowsProfile}"
   ];
 
-  # Give flathub access to custom fonts
-  home.activation = {
-    flathub = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.local/share/fonts
-      /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.icons
-    '';
-  };
+  # # Give flathub access to custom fonts
+  # home.activation = {
+  #   flathub = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #     /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.local/share/fonts
+  #     /run/current-system/sw/bin/flatpak --user override --filesystem=$HOME/.icons
+  #   '';
+  # };
 
   dconf.settings = {
-    "org/gnome/mutter" = {
-      center-new-windows = true;
-      workspaces-only-on-primary = true;
-    };
-    "org/gnome/shell".enabled-extensions = [
-      "burn-my-windows@schneegans.github.com"
-      "custom-osd@neuromorph"
-      "fullscreen-avoider@noobsai.github.com"
-      "fullscreen-hot-corner@sorrow.about.alice.pm.me"
-      "one-thing@github.com"
-      "pano@elhan.io"
-    ];
-    "org/gnome/shell/extensions/burn-my-windows" = {
-      active-profile = "${burnMyWindowsProfile}";
-    };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      scaling-factor = 2;
-    };
-    "org/gnome/desktop/interface" = {
-      clock-format = "12h";
-    };
-    "org/gtk/settings/file-chooser" = {
-      clock-format = "12h";
-    };
-    "org/gnome/desktop/peripherals/touchpad" = {
-      tap-to-click = true;
-    };
-    "org/gnome/desktop/peripherals/mouse" = {
-      accel-profile = "flat";
-      speed = -0.55;
-    };
-    "org/gnome/desktop/sound" = {
-      allow-volume-above-100-percent = true;
-    };
-    "org/gnome/shell/keybindings" = {
-      toggle-overview = [ "<Super>slash" ];
-      maximize = [ "<Super>m" ];
-    };
-    "org/gnome/shell/extensions/custom-osd" = with lib.hm.gvariant; {
-      alpha = 25.0;
-      delay = 2500.0;
-      monitors = "all";
-
-      # text
-      color = [ "0.9647" "0.9607" "0.9568" "1" ];
-      font = "Cantarell 12";
-
-      # gradient
-      bg-effect = "gradient";
-      gradient-direction = "vertical";
-      bgcolor = [ "0.5686" "0.2549" "0.6745" "1" ]; # light purple
-      bgcolor2 = [ "0.7529" "0.3803" "0.7960" "1" ]; # lighter purple
-
-      # position & size
-      horizontal = 48.0;
-      vertical = -44.0;
-      size = 20;
-
-      # appearance
-      border = false;
-      bradius = 50.0; # round pill shape
-      shadow = true;
-
-      clock-osd = "";
-      osd-all = [
-        (mkDictionaryEntry [ "icon-all" true ])
-        (mkDictionaryEntry [ "label-all" true ])
-        (mkDictionaryEntry [ "level-all" true ])
-        (mkDictionaryEntry [ "numeric-all" true ])
-      ];
-      osd-nolabel = [
-        (mkDictionaryEntry [ "icon-nolabel" true ])
-        (mkDictionaryEntry [ "numeric-nolabel" true ])
-      ];
-      osd-nolevel = [
-        (mkDictionaryEntry [ "icon-nolevel" true ])
-        (mkDictionaryEntry [ "numeric-nolevel" true ])
-      ];
-      rotate = false;
-    };
+    # "org/gnome/mutter" = {
+    #   center-new-windows = true;
+    #   workspaces-only-on-primary = true;
+    # };
+    # "org/gnome/shell".enabled-extensions = [
+    #   "burn-my-windows@schneegans.github.com"
+    #   "custom-osd@neuromorph"
+    #   "fullscreen-avoider@noobsai.github.com"
+    #   "fullscreen-hot-corner@sorrow.about.alice.pm.me"
+    #   "one-thing@github.com"
+    #   "pano@elhan.io"
+    # ];
+    # "org/gnome/shell/extensions/burn-my-windows" = {
+    #   active-profile = "${burnMyWindowsProfile}";
+    # };
+    # "org/gnome/desktop/interface" = {
+    #   color-scheme = "prefer-dark";
+    #   scaling-factor = 2;
+    # };
+    # "org/gnome/desktop/interface" = {
+    #   clock-format = "12h";
+    # };
+    # "org/gtk/settings/file-chooser" = {
+    #   clock-format = "12h";
+    # };
   };
 }
