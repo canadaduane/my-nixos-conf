@@ -8,6 +8,7 @@
     ./nix.nix
     ./pkgs.nix
     ./shells.nix
+    ./steam.nix
   ];
 
   # Localization
