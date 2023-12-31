@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   # Install packages for both Linux & Mac OS
@@ -10,6 +10,7 @@
     fractal # matrix chat
     krita # graphic art
     lazpaint # image editor
+    obsidian # notes
     shotcut # video editing
     blackbox-terminal # terminal
 

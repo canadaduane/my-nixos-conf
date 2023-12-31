@@ -25,7 +25,6 @@
 
     vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     vscode-extensions.inputs.nixpkgs.follows = "stable";
-
   };
 
   outputs =
@@ -44,6 +43,7 @@
       inherit (utils.lib) mkFlake;
       inherit (stable.lib.filesystem) listFilesRecursive;
       inherit (stable.lib) listToAttrs hasSuffix removeSuffix removePrefix;
+
 
       nixosConfig = {
         system = "x86_64-linux";
@@ -92,6 +92,9 @@
 
       channelsConfig = {
         allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-25.9.0"
+        ];
       };
 
       channels = {
