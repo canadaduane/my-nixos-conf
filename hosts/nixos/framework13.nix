@@ -19,18 +19,18 @@
   # File System
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/53abc4b3-9b27-4139-a5e3-bfa6a63f6d4b";
+      device = "/dev/disk/by-uuid/6ac36646-83ab-45c3-93f7-53250f7438ee";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
     {
-      device = "/dev/disk/by-uuid/FCFA-0F79";
+      device = "/dev/disk/by-uuid/B625-166C";
       fsType = "vfat";
     };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/8b95977b-8c63-4ec2-83bf-9b646a599f37"; }];
+    [{ device = "/dev/disk/by-uuid/38b1462e-a3e7-46d0-b8e0-839aba5bf2cc"; }];
 
   # Boot
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
