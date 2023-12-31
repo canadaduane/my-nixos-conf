@@ -13,6 +13,7 @@
     obsidian # notes
     shotcut # video editing
     blackbox-terminal # terminal
+    telegram-desktop # chat
 
     # CLI tools
     bitwarden-cli # access secrets
