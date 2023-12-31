@@ -49,5 +49,6 @@
     "search.showLineNumbers" = false;
     "debug.console.fontSize" = 13;
     "window.menuBarVisibility" = "hidden";
+    "amVim.bindCtrlCommands" = false;
   };
 }
