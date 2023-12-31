@@ -9,6 +9,7 @@
     blanket # background sounds
     eyedropper # color picker
     gnome-obfuscate # hide parts of images
+    gnome.dconf-editor # gui settings
     gnome.gnome-tweaks # mess with gnome
     google-chrome # browser
     gparted # disk partitions
