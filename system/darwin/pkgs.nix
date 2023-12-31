@@ -1,4 +1,5 @@
 {
+  # Install packages just for Mac OS
   homebrew = {
     enable = true;
     onActivation = {
@@ -8,15 +9,9 @@
     };
 
     casks = [
-      # https://github.com/NixOS/nixpkgs/issues/254944
-      "1password"
-      "1password-cli"
       "docker"
       "google-chrome"
       "karabiner-elements"
-      "raycast"
-      "scroll-reverser"
-      "openscad"
     ];
 
     taps = [

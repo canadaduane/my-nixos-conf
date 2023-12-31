@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # Install packages for both Linux & Mac OS
   environment.systemPackages = with pkgs; [
     # Graphical apps
     amberol # music player
@@ -14,32 +15,25 @@
     # CLI tools
     bitwarden-cli # access secrets
     broot # summarize deep dirs
-    cmake
-    coreutils
-    curl
+    cmake # C's cmake
+    coreutils # GNU/Linux tools
+    curl # network requests
     eza # better ls
-    fd
-    file
+    entr # run commands when files change 
+    fd # quick find
+    file # file info
     fzf # fuzzy search
-    gcc
+    gcc # compiler
     git # version control
-    gnumake
+    gnumake # make
     htop # system resources
     lazygit # ncurses git
-    lsof
+    lsof # unix file info
     nixpkgs-fmt # format .nix code
-    ripgrep
-    sqlite
-    unzip
-    wget
-    wl-clipboard
-
-    # Investigate
-    #  entr
-    #  helix
-    #  wezterm
-    #  httpie
-    #  killall
-    #  neofetch
+    ripgrep # fast text search
+    sqlite # database
+    unzip # uncompress
+    wget # download files
+    wl-clipboard # wayland copy/paste
   ];
 }
