@@ -36,6 +36,9 @@
 
   programs.dconf.enable = true;
 
+  # Save power on laptop battery
+  powerManagement.enable = true;
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
