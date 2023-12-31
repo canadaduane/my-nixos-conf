@@ -20,6 +20,7 @@
     # Workbench
     "workbench.startupEditor" = "none";
     "workbench.welcomePage.walkthroughs.openOnInstall" = false;
+    "workbench.tree.indent" = 16;
 
     # Security
     "security.workspace.trust.enabled" = false;
