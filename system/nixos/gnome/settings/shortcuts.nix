@@ -29,7 +29,7 @@ in
 {
   dconf.settings = customSettings // {
     "org/gnome/desktop/wm/keybindings" = {
-      toggle-maximized = [ "<Super>m" ];
+      maximize = [ "<Super>m" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
