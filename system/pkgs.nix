@@ -11,6 +11,7 @@
     krita # graphic art
     lazpaint # image editor
     shotcut # video editing
+    blackbox-terminal # terminal
 
     # CLI tools
     bitwarden-cli # access secrets

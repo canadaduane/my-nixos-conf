@@ -5,7 +5,7 @@ let
   shortcuts = [
     {
       name = "Terminal";
-      command = "${pkgs.gnome-console}/bin/kgx";
+      command = "${pkgs.blackbox-terminal}/bin/blackbox";
       binding = "<Super>Return";
     }
     {
