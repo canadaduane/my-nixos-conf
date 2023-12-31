@@ -8,6 +8,8 @@
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "stable";
 
+    declarative-flatpak.url = "github:GermanBread/declarative-flatpak/stable";
+
     fenix.url = "github:nix-community/fenix";
     fenix.inputs.nixpkgs.follows = "stable";
 
@@ -30,6 +32,7 @@
   outputs =
     { self
     , stable
+    , declarative-flatpak
     , darwin
     , hm
     , hardware
@@ -54,6 +57,7 @@
 
         modules = [
           hm.nixosModules.home-manager
+          declarative-flatpak.nixosModules.default
           ./system/nixos
         ];
       };
