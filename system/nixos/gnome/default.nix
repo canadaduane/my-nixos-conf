@@ -44,6 +44,7 @@
     epiphany
     gnome-photos
     gnome-tour
+    gnome-console
     gnome.gnome-music
     gnome.gnome-screenshot
     gnome.gnome-terminal
