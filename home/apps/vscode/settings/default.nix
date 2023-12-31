@@ -12,7 +12,7 @@
     "editor.cursorSmoothCaretAnimation" = "on";
     "editor.cursorStyle" = "line";
     "editor.emptySelectionClipboard" = false;
-    # "editor.fontFamily" = "'Symbols Nerd Font Mono','PowerlineSymbols','Noto Color Emoji'";
+    "editor.fontFamily" = "'FiraCode Nerd Font'";
     "editor.fontSize" = 13;
     "editor.formatOnSave" = true;
     "editor.inlineSuggest.enabled" = true;
@@ -48,5 +48,6 @@
     # Other
     "search.showLineNumbers" = false;
     "debug.console.fontSize" = 13;
+    "window.menuBarVisibility" = "hidden";
   };
 }
