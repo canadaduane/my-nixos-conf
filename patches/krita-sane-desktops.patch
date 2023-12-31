@@ -1,0 +1,214 @@
+diff --git a/plugins/impex/brush/CMakeLists.txt b/plugins/impex/brush/CMakeLists.txt
+index c8f4e8fe53..383cc8a7bd 100644
+--- a/plugins/impex/brush/CMakeLists.txt
++++ b/plugins/impex/brush/CMakeLists.txt
+@@ -26,4 +26,3 @@ kis_add_library(kritabrushimport MODULE ${kritabrushimport_PART_SRCS})
+ target_link_libraries(kritabrushimport kritalibbrush kritaui)
+ 
+ install(TARGETS kritabrushimport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_brush.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/csv/CMakeLists.txt b/plugins/impex/csv/CMakeLists.txt
+index a051d66b99..a185ec244c 100644
+--- a/plugins/impex/csv/CMakeLists.txt
++++ b/plugins/impex/csv/CMakeLists.txt
+@@ -29,4 +29,3 @@ target_link_libraries(kritacsvexport kritaui kritaimpex)
+ 
+ install(TARGETS kritacsvexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_csv.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/exr/CMakeLists.txt b/plugins/impex/exr/CMakeLists.txt
+index 37f68fe2ac..8efe59caa8 100644
+--- a/plugins/impex/exr/CMakeLists.txt
++++ b/plugins/impex/exr/CMakeLists.txt
+@@ -34,4 +34,3 @@ install( FILES
+     exrchannels.schema
+     DESTINATION ${DATA_INSTALL_DIR}/krita/metadata/schemas)
+ 
+-install( PROGRAMS  krita_exr.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/gif/CMakeLists.txt b/plugins/impex/gif/CMakeLists.txt
+index 0b08826d9b..4a3e20a9c8 100644
+--- a/plugins/impex/gif/CMakeLists.txt
++++ b/plugins/impex/gif/CMakeLists.txt
+@@ -25,4 +25,3 @@ kis_add_library(kritagifimport MODULE ${kritagifimport_SOURCES})
+ target_link_libraries(kritagifimport kritaui ${GIF_LIBRARY})
+ 
+ install(TARGETS kritagifimport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_gif.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/heif/CMakeLists.txt b/plugins/impex/heif/CMakeLists.txt
+index daa6202177..e775414ed5 100644
+--- a/plugins/impex/heif/CMakeLists.txt
++++ b/plugins/impex/heif/CMakeLists.txt
+@@ -31,4 +31,3 @@ target_link_libraries(kritaheifexport kritaui kritalibkra kritaimpex ${HEIF_LDFL
+ 
+ install(TARGETS kritaheifexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_heif.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/heightmap/CMakeLists.txt b/plugins/impex/heightmap/CMakeLists.txt
+index 1de61d1c08..710f02fdb0 100644
+--- a/plugins/impex/heightmap/CMakeLists.txt
++++ b/plugins/impex/heightmap/CMakeLists.txt
+@@ -29,4 +29,3 @@ kis_add_library(kritaheightmapexport MODULE ${kritaheightmapexport_SOURCES})
+ target_link_libraries(kritaheightmapexport kritaui kritaimpex)
+ 
+ install(TARGETS kritaheightmapexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_heightmap.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/jp2/CMakeLists.txt b/plugins/impex/jp2/CMakeLists.txt
+index d58617c987..d9418c62a3 100644
+--- a/plugins/impex/jp2/CMakeLists.txt
++++ b/plugins/impex/jp2/CMakeLists.txt
+@@ -20,4 +20,3 @@ kis_add_library(kritajp2import MODULE ${kritajp2import_SOURCES})
+ target_link_libraries(kritajp2import kritaui ${OpenJPEG_LIBRARIES} )
+ 
+ install(TARGETS kritajp2import DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_jp2.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/jpeg/CMakeLists.txt b/plugins/impex/jpeg/CMakeLists.txt
+index c99eb6674b..1c98f8fc96 100644
+--- a/plugins/impex/jpeg/CMakeLists.txt
++++ b/plugins/impex/jpeg/CMakeLists.txt
+@@ -40,4 +40,3 @@ kis_add_library(kritajpegexport MODULE ${kritajpegexport_SOURCES})
+ target_link_libraries(kritajpegexport kritaui kritaimpex ${JPEG_LIBRARIES} ${LCMS2_LIBRARIES} LibExiv2::LibExiv2 )
+ 
+ install(TARGETS kritajpegexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_jpeg.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/jxl/CMakeLists.txt b/plugins/impex/jxl/CMakeLists.txt
+index c2065f0e2e..99d5365979 100644
+--- a/plugins/impex/jxl/CMakeLists.txt
++++ b/plugins/impex/jxl/CMakeLists.txt
+@@ -23,4 +23,3 @@ target_link_libraries(kritajxlexport kritaui kritalibkra kritaimpex ${JPEGXL_LIB
+ 
+ install(TARGETS kritajxlexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_jxl.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/kra/CMakeLists.txt b/plugins/impex/kra/CMakeLists.txt
+index 33fa3e8661..36fc235a59 100644
+--- a/plugins/impex/kra/CMakeLists.txt
++++ b/plugins/impex/kra/CMakeLists.txt
+@@ -18,7 +18,6 @@ target_link_libraries(kritakraexport kritaui kritalibkra kritaimpex)
+ 
+ install(TARGETS kritakraexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_kra.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+ 
+ if(SHOULD_BUILD_FILEMANAGER_THUMBNAIL)
+     install( FILES  krita_kra_thumbnail.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+diff --git a/plugins/impex/krz/CMakeLists.txt b/plugins/impex/krz/CMakeLists.txt
+index d109e0f5e5..29735f2980 100644
+--- a/plugins/impex/krz/CMakeLists.txt
++++ b/plugins/impex/krz/CMakeLists.txt
+@@ -8,4 +8,3 @@ target_link_libraries(kritakrzexport kritaui kritalibkra kritaimpex)
+ 
+ install(TARGETS kritakrzexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_krz.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/ora/CMakeLists.txt b/plugins/impex/ora/CMakeLists.txt
+index 7f58aec1ca..27d0770568 100644
+--- a/plugins/impex/ora/CMakeLists.txt
++++ b/plugins/impex/ora/CMakeLists.txt
+@@ -30,5 +30,4 @@ target_link_libraries(kritaoraexport kritaui kritaimpex)
+ 
+ install(TARGETS kritaoraexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_ora.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+ 
+diff --git a/plugins/impex/pdf/CMakeLists.txt b/plugins/impex/pdf/CMakeLists.txt
+index 01dea343e8..88853a7f18 100644
+--- a/plugins/impex/pdf/CMakeLists.txt
++++ b/plugins/impex/pdf/CMakeLists.txt
+@@ -9,4 +9,3 @@ kis_add_library(kritapdfimport MODULE ${kritapdfimport_SOURCES})
+ target_link_libraries(kritapdfimport kritaui Poppler::Qt5)
+ 
+ install(TARGETS kritapdfimport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install(PROGRAMS krita_pdf.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/png/CMakeLists.txt b/plugins/impex/png/CMakeLists.txt
+index 1dee69e17c..9627d52dfd 100644
+--- a/plugins/impex/png/CMakeLists.txt
++++ b/plugins/impex/png/CMakeLists.txt
+@@ -26,4 +26,3 @@ target_link_libraries(kritapngexport kritaui kritaimpex ${PNG_LIBRARIES})
+ 
+ install(TARGETS kritapngexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_png.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/psd/CMakeLists.txt b/plugins/impex/psd/CMakeLists.txt
+index 9756a3744b..069f09909a 100644
+--- a/plugins/impex/psd/CMakeLists.txt
++++ b/plugins/impex/psd/CMakeLists.txt
+@@ -49,4 +49,3 @@ endif ()
+ 
+ install(TARGETS kritapsdexport DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_psd.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/qimageio/CMakeLists.txt b/plugins/impex/qimageio/CMakeLists.txt
+index 363896e1b5..e154183d68 100644
+--- a/plugins/impex/qimageio/CMakeLists.txt
++++ b/plugins/impex/qimageio/CMakeLists.txt
+@@ -24,4 +24,3 @@ target_link_libraries(kritaqimageioimport kritaui)
+ 
+ install(TARGETS kritaqimageioimport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_qimageio.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/raw/CMakeLists.txt b/plugins/impex/raw/CMakeLists.txt
+index 08284bfdc1..4dd8dbedc3 100644
+--- a/plugins/impex/raw/CMakeLists.txt
++++ b/plugins/impex/raw/CMakeLists.txt
+@@ -28,5 +28,4 @@ kis_add_library(krita_raw_import MODULE ${krita_raw_import_SOURCES})
+ target_link_libraries(krita_raw_import kritaui ${LibRaw_LIBRARIES})
+ 
+ install(TARGETS krita_raw_import  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_raw.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+ 
+diff --git a/plugins/impex/spriter/CMakeLists.txt b/plugins/impex/spriter/CMakeLists.txt
+index 7cdbf76380..a0a8153de0 100644
+--- a/plugins/impex/spriter/CMakeLists.txt
++++ b/plugins/impex/spriter/CMakeLists.txt
+@@ -10,4 +10,3 @@ target_link_libraries(kritaspriterexport kritaui kritaimpex)
+ 
+ install(TARGETS kritaspriterexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_spriter.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/svg/CMakeLists.txt b/plugins/impex/svg/CMakeLists.txt
+index f30602031c..dccdc06da2 100644
+--- a/plugins/impex/svg/CMakeLists.txt
++++ b/plugins/impex/svg/CMakeLists.txt
+@@ -12,4 +12,3 @@ target_link_libraries(kritasvgimport kritaui )
+ 
+ install(TARGETS kritasvgimport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+ 
+-install( PROGRAMS  krita_svg.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/tga/CMakeLists.txt b/plugins/impex/tga/CMakeLists.txt
+index 145aee2381..71e8e0c0e4 100644
+--- a/plugins/impex/tga/CMakeLists.txt
++++ b/plugins/impex/tga/CMakeLists.txt
+@@ -23,4 +23,3 @@ kis_add_library(kritatgaimport MODULE ${kritatgaimport_SOURCES})
+ target_link_libraries(kritatgaimport kritaui)
+ 
+ install(TARGETS kritatgaimport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_tga.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff --git a/plugins/impex/tiff/CMakeLists.txt b/plugins/impex/tiff/CMakeLists.txt
+index dfb54e1b24..1f79985d8b 100644
+--- a/plugins/impex/tiff/CMakeLists.txt
++++ b/plugins/impex/tiff/CMakeLists.txt
+@@ -68,5 +68,4 @@ target_link_libraries(kritatiffexport
+     )
+ 
+ install(TARGETS kritatiffexport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_tiff.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+ 
+diff --git a/plugins/impex/webp/CMakeLists.txt b/plugins/impex/webp/CMakeLists.txt
+index 5fef827cd6..f1b861de12 100644
+--- a/plugins/impex/webp/CMakeLists.txt
++++ b/plugins/impex/webp/CMakeLists.txt
+@@ -21,5 +21,4 @@ if (WebP_FOUND)
+     target_link_libraries(kritawebpimport kritaui WebP::webp)
+ 
+     install(TARGETS kritawebpimport DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-    install(PROGRAMS krita_webp.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+ endif()
+diff --git a/plugins/impex/xcf/CMakeLists.txt b/plugins/impex/xcf/CMakeLists.txt
+index 67d9fb062c..d4c3edb3fc 100644
+--- a/plugins/impex/xcf/CMakeLists.txt
++++ b/plugins/impex/xcf/CMakeLists.txt
+@@ -46,4 +46,3 @@ if (WIN32)
+ endif ()
+ 
+ install(TARGETS kritaxcfimport  DESTINATION ${KRITA_PLUGIN_INSTALL_DIR})
+-install( PROGRAMS  krita_xcf.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})

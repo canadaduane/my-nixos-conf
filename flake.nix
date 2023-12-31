@@ -44,7 +44,6 @@
       inherit (stable.lib.filesystem) listFilesRecursive;
       inherit (stable.lib) listToAttrs hasSuffix removeSuffix removePrefix;
 
-
       nixosConfig = {
         system = "x86_64-linux";
 
