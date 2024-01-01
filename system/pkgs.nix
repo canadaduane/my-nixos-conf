@@ -33,7 +33,6 @@
     gcc # compiler
     git # version control
     gnumake # make
-    htop # system resources
     lazygit # ncurses git
     lsof # unix file info
     nixpkgs-fmt # format .nix code

@@ -22,8 +22,8 @@ in
   };
 
   xdg.enable = true;
-  # xdg.portal.enable = true;
   programs.ssh.enable = true;
+  programs.htop.enable = true;
   programs.home-manager.enable = true;
   xsession.numlock.enable = pkgs.stdenv.isLinux;
 }
