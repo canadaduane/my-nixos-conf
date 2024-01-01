@@ -39,6 +39,7 @@
     gcc # compiler
     git # version control
     gnumake # make
+    httpie # API testing
     lazygit # ncurses git
     lsof # unix file info
     nixpkgs-fmt # format .nix code
