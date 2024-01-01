@@ -9,12 +9,12 @@ let
     fullscreen-hot-corner
     one-thing
     pano
+    rounded-window-corners
 
     # appindicator
     # dash-to-dock
     # gtk-title-bar
-    # hide-universal-access
-    # rounded-window-corners
+    # just-perfection
     # space-bar
     # user-themes
   ];
