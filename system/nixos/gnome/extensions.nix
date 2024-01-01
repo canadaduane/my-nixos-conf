@@ -2,6 +2,7 @@
 
 let
   extensions = with pkgs.gnomeExtensions; [
+    alphabetical-app-grid
     burn-my-windows
     custom-osd
     fullscreen-avoider
