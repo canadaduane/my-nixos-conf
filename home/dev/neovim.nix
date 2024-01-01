@@ -15,12 +15,11 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      neovim
-    ];
-
-    d.shell.aliases = {
-      vim = "nvim";
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
     };
   };
 }
