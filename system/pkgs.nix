@@ -7,14 +7,17 @@
     amberol # music player
     bitwarden # passwords
     celluloid # video player
-    fractal # matrix chat
     krita # graphic art
     lazpaint # image editor
     obsidian # notes
     shotcut # video editing
     blackbox-terminal # terminal
+
+    # Chat apps
+    fractal # matrix chat
     telegram-desktop # unfree chat (personal)
     slack # unfree chat (business)
+    discord # creative/gamer chat
 
     # CLI tools
     bitwarden-cli # access secrets
