@@ -19,6 +19,7 @@
     podman-desktop # container GUI 
     shotcut # video editing
     upscayl # image upscaler
+    xournalpp # PDF notes & signatures
 
     # Chat apps
     fractal # matrix chat
