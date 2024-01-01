@@ -18,6 +18,7 @@
     podman # containers
     podman-desktop # container GUI 
     shotcut # video editing
+    upscayl # image upscaler
 
     # Chat apps
     fractal # matrix chat
