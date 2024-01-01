@@ -13,7 +13,8 @@
     obsidian # notes
     shotcut # video editing
     blackbox-terminal # terminal
-    telegram-desktop # chat
+    telegram-desktop # unfree chat (personal)
+    slack # unfree chat (business)
 
     # CLI tools
     bitwarden-cli # access secrets
