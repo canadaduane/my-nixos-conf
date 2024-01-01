@@ -5,6 +5,7 @@ let
     alphabetical-app-grid
     burn-my-windows
     custom-osd
+    emoji-copy
     fullscreen-avoider
     fullscreen-hot-corner
     one-thing
