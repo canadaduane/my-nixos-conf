@@ -19,25 +19,9 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       bun
-      fnm
+      corepack_20
+      nodejs_20
       nodePackages.prettier
     ];
-
-    d.shell.aliases = {
-      nvm = "fnm";
-      npm = "corepack npm";
-      npx = "corepack npx";
-      pnpm = "corepack pnpm";
-      pnpx = "corepack pnpx";
-      yarn = "corepack yarn";
-      yarnpkg = "corepack yarnpkg";
-    };
-
-    home.file.".node-version".text = lts-major;
-
-    # programs.zsh.interactiveShellInit = ''
-    #   # Node.js
-    #   fnm env --use-on-cd --version-file-strategy recursive | source
-    # '';
   };
 }
