@@ -7,6 +7,7 @@
 
   programs.zsh = {
     enable = true;
+
     plugins = [
       {
         name = "powerlevel10k";
@@ -19,5 +20,9 @@
         file = "p10k.zsh";
       }
     ];
+
+    initExtra = ''
+      source $HOME/.secrets
+    '';
   };
 }
