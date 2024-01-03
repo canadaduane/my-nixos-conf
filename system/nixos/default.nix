@@ -4,6 +4,7 @@
   imports = [
     ./boot.nix
     ./docker.nix
+    ./envfs.nix
     ./flatpak.nix
     ./gnome
     ./hardware.nix
