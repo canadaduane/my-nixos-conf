@@ -63,6 +63,7 @@
   # Save power on laptop battery
   powerManagement.enable = true;
 
+  xdg.portal.enable = true;
 
   nixpkgs.hostPlatform = "x86_64-linux";
 }
