@@ -25,5 +25,8 @@ in
 
     # Nix IDE
     "nix.formatterPath" = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
+
+    # AmVim
+    "amVim.bindCtrlCommands" = false;
   };
 }

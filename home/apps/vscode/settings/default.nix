@@ -1,5 +1,10 @@
 { pkgs, ... }:
 
+let
+  fontSize = 13;
+  scrollSensitivity = 0.3;
+in
+
 {
   imports = [
     ./extensions.nix
@@ -13,14 +18,16 @@
     "editor.cursorStyle" = "line";
     "editor.emptySelectionClipboard" = false;
     "editor.fontFamily" = "'FiraCode Nerd Font'";
-    "editor.fontSize" = 13;
+    "editor.fontSize" = fontSize;
     "editor.formatOnSave" = true;
     "editor.inlineSuggest.enabled" = true;
+    "editor.mouseWheelScrollSensitivity" = scrollSensitivity;
 
     # Workbench
     "workbench.startupEditor" = "none";
     "workbench.welcomePage.walkthroughs.openOnInstall" = false;
     "workbench.tree.indent" = 16;
+    "workbench.list.mouseWheelScrollSensitivity" = scrollSensitivity;
 
     # Security
     "security.workspace.trust.enabled" = false;
@@ -30,7 +37,8 @@
     "explorer.confirmDragAndDrop" = false;
 
     # Terminal
-    "terminal.integrated.fontSize" = 13;
+    "terminal.integrated.fontSize" = fontSize;
+    "terminal.integrated.mouseWheelScrollSensitivity" = scrollSensitivity;
 
     # Git
     "git.autofetch" = false;
@@ -47,8 +55,7 @@
 
     # Other
     "search.showLineNumbers" = false;
-    "debug.console.fontSize" = 13;
+    "debug.console.fontSize" = fontSize;
     "window.menuBarVisibility" = "hidden";
-    "amVim.bindCtrlCommands" = false;
   };
 }
