@@ -1,5 +1,6 @@
 {
   imports = [
+    ./firefox.nix
     ./flameshot.nix
     ./krita
     ./keyd.nix
