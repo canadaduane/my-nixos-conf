@@ -8,6 +8,8 @@
     ];
   }];
 
+  environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
+
   services.xserver = {
     # Enable the graphical windowing system
     enable = true;

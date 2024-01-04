@@ -40,20 +40,29 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services = {
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    # Enable firmware updates
+    fwupd.enable = true;
+  };
+
+  programs = {
+    dconf.enable = true;
+
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+  };
+
 
   security.polkit.enable = true;
-
-  programs.dconf.enable = true;
 
   # Save power on laptop battery
   powerManagement.enable = true;
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   nixpkgs.hostPlatform = "x86_64-linux";
 }
