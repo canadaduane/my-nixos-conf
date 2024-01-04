@@ -46,12 +46,17 @@
 
   environment.gnome.excludePackages = with pkgs; [
     epiphany
+    gedit
+    gnome-console
     gnome-photos
     gnome-tour
-    gnome-console
+    gnome.gnome-characters
+    gnome.gnome-logs
+    gnome.gnome-maps
     gnome.gnome-music
     gnome.gnome-screenshot
     gnome.gnome-terminal
+    gnome.totem
     gnome.yelp
   ];
 }
