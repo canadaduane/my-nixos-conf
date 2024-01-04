@@ -1,12 +1,9 @@
 {
-  description = "My NixOS ❄ / MacOS 🍏 Configuration";
+  description = "My NixOS Configuration";
 
   inputs = {
     stable.url = "github:nixos/nixpkgs/nixos-23.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    darwin.url = "github:LnL7/nix-darwin/master";
-    darwin.inputs.nixpkgs.follows = "stable";
 
     declarative-flatpak.url = "github:GermanBread/declarative-flatpak/stable";
 
@@ -31,7 +28,6 @@
     { self
     , stable
     , declarative-flatpak
-    , darwin
     , hm
     , hardware
     , utils
@@ -44,7 +40,7 @@
       inherit (stable.lib.filesystem) listFilesRecursive;
       inherit (stable.lib) listToAttrs hasSuffix removeSuffix removePrefix;
 
-      nixosConfig = {
+      platform = {
         system = "x86_64-linux";
 
         specialArgs = {
@@ -54,27 +50,10 @@
         modules = [
           hm.nixosModules.home-manager
           declarative-flatpak.nixosModules.default
-          ./system/nixos
-        ];
-      };
-
-      darwinConfig = {
-        system = "aarch64-darwin";
-        output = "darwinConfigurations";
-        builder = darwin.lib.darwinSystem;
-
-        modules = [
-          hm.darwinModules.home-manager
-          ./system/darwin
         ];
       };
 
       mkHosts = dir:
-        let
-          platform =
-            if hasSuffix "darwin" dir
-            then darwinConfig else nixosConfig;
-        in
         listToAttrs (map
           (host:
             {
@@ -87,6 +66,7 @@
           (listFilesRecursive dir));
 
     in
+
     mkFlake {
       inherit self inputs;
 
@@ -121,9 +101,7 @@
         };
       };
 
-      hosts =
-        (mkHosts ./hosts/nixos) //
-        (mkHosts ./hosts/darwin);
+      hosts = (mkHosts ./hosts/nixos);
     };
 
   nixConfig = {

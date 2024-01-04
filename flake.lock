@@ -1,26 +1,5 @@
 {
   "nodes": {
-    "darwin": {
-      "inputs": {
-        "nixpkgs": [
-          "stable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1703887437,
-        "narHash": "sha256-awkp9jyXf8aV9eDWhLdKUqUdg9HfZKe0NdQebSiC0VA=",
-        "owner": "LnL7",
-        "repo": "nix-darwin",
-        "rev": "0a3afdc60042d8e1c2deb63bdfa017acc424a397",
-        "type": "github"
-      },
-      "original": {
-        "owner": "LnL7",
-        "ref": "master",
-        "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
     "declarative-flatpak": {
       "inputs": {
         "nixpkgs": "nixpkgs",
@@ -189,7 +168,6 @@
     },
     "root": {
       "inputs": {
-        "darwin": "darwin",
         "declarative-flatpak": "declarative-flatpak",
         "fenix": "fenix",
         "hardware": "hardware",
