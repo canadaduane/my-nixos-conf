@@ -41,9 +41,9 @@ in
 
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:";
-      focus-mode = "click";
-      auto-raise = false;
       resize-with-right-button = false;
+      auto-raise = true;
+      focus-new-windows = "smart";
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
