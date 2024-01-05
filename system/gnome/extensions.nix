@@ -11,6 +11,7 @@ let
     one-thing
     pano
     rounded-window-corners
+    steal-my-focus-window
 
     # appindicator
     # dash-to-dock
