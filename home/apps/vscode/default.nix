@@ -40,5 +40,24 @@ in
         vscode-marketplace.simonsiefke.svg-preview
       ]);
     };
+
+    # Make VSCode settings.json writable--helpful for tinkering and quick temporary changes
+    home.activation =
+      let
+        userFilePath = "${config.xdg.configHome}/Code/User/settings.json";
+        userSettings = config.programs.vscode.userSettings;
+        jsonSettings = pkgs.writeText "tmp_vscode_settings" (builtins.toJSON userSettings);
+      in
+      {
+        removeExistingVSCodeSettings = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+          rm -rf "${userFilePath}"
+        '';
+
+        overwriteVSCodeSymlink =
+          lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+            rm -rf "${userFilePath}"
+            cat ${jsonSettings} | ${pkgs.jq}/bin/jq --monochrome-output > "${userFilePath}"
+          '';
+      };
   };
 }
